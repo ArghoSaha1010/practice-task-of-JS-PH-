@@ -19,11 +19,12 @@ function  calculateSleepTime( times )
     {
         sum += time;
     }
-    const hour = parseInt(sum / 3600);
+
+    const hour = Math.floor(sum / 3600);
     sum = sum % 3600;
-    const min = parseInt(sum / 60);
+    const min = Math.floor(sum / 60);
     sum = sum % 60;
-    const sec = parseInt(sum);
+    const sec = Math.floor(sum);
 
     let store =
     {
@@ -31,8 +32,8 @@ function  calculateSleepTime( times )
         minute: min,
         second: sec
     }
-
+    
     return store;
 }
     
-console.log(calculateSleepTime());
+console.log(calculateSleepTime([100, 3800, "90" ]));
